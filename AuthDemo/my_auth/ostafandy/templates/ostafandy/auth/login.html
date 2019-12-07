@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ostafandy</title>
+</head>
+<body>
+
+<h2>Ostafandy.com Login</h2>
+
+<a href="{% url 'ostafandy:home'%}">Home</a> /
+<a href="{% url 'ostafandy:signup' %}">Sign Up as a client</a>
+<a href="{% url 'ostafandy:signup_ostafandy' %}">Sign Up as Ostafandy</a>
+
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+
+</body>
+</html>

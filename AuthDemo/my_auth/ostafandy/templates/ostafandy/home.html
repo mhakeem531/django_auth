@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ostafandy</title>
+</head>
+<body>
+<h2>ostafandy.com</h2>
+
+{% if user.is_authenticated %}
+  <p>Hi {{ user.full_name }}, Welcome to ostafandy!</p>
+  <p><a href="{% url 'ostafandy:logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in!</p>
+  <a href="{% url 'ostafandy:login' %}">Log In</a> /
+  <a href="{% url 'ostafandy:signup' %}">Sign Up as a client</a>
+  <a href="{% url 'ostafandy:signup_ostafandy' %}">Sign Up as Ostafandy</a>
+{% endif %}
+</body>
+</html>
